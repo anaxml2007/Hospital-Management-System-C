@@ -1,20 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-// Structures for Patient and Doctor
-struct Patient {
-    int id;
-    char name[50];
-    int age;
-    char disease[50];
-};
-
-struct Doctor {
-    int id;
-    char name[50];
-    char specialization[50];
-};
+#include "patient.h"
+#include "doctor.h"
 
 int main() {
     struct Patient p1;
@@ -62,7 +50,7 @@ int main() {
         fgets(d1.name, sizeof(d1.name), stdin);
         d1.name[strcspn(d1.name, "\n")] = 0; 
         
-        printf("Enter Specialization (e.g. Cardiology): ");
+        printf("Enter Specialization: ");
         fgets(d1.specialization, sizeof(d1.specialization), stdin);
         d1.specialization[strcspn(d1.specialization, "\n")] = 0;
 
